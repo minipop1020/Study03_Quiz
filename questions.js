@@ -12,11 +12,11 @@ const QUESTIONS = [
   {
     id: "hist-02",
     category: "한국사",
-    question: "고구려 광개토왕의 업적을 새긴 광개토왕릉비를 414년에 세운 왕은?",
-    choices: ["장수왕", "소수림왕", "고국천왕", "미천왕"],
+    question: "충청남도 공주에서 발견되었고, 무덤 안의 지석으로 주인을 알 수 있게 된 백제 왕의 무덤은?",
+    choices: ["무령왕릉", "무열왕릉", "진흥왕릉", "동명왕릉"],
     answer: 0,
-    explanation: "광개토왕릉비는 고구려 제20대 장수왕이 414년(장수왕 3)에 세운 비석이다.",
-    source: { name: "한국민족문화대백과사전 「광개토왕릉비」", url: "https://encykorea.aks.ac.kr/Article/E0005058" }
+    explanation: "무령왕릉은 충청남도 공주에 있는 백제 무령왕의 무덤으로, 무덤 안에서 나온 지석으로 주인을 알 수 있다.",
+    source: { name: "한국민족문화대백과사전 「무령왕릉」", url: "https://encykorea.aks.ac.kr/Article/E0019018" }
   },
   {
     id: "hist-03",
@@ -57,11 +57,11 @@ const QUESTIONS = [
   {
     id: "hist-07",
     category: "한국사",
-    question: "1592년 한산도대첩에서 일본 수군의 주력을 무찌른 조선 수군을 이끈 전라좌수사는?",
-    choices: ["이순신", "권율", "김시민", "곽재우"],
+    question: "1392년 고려를 대신해 조선을 세우고 첫 번째 왕이 된 인물은?",
+    choices: ["이성계", "이방원", "정몽주", "정도전"],
     answer: 0,
-    explanation: "한산도대첩은 1592년 7월 전라좌수사 이순신 등이 이끈 조선 수군이 한산섬 앞바다에서 일본 수군 주력을 무찌른 해전이다.",
-    source: { name: "한국민족문화대백과사전 「한산도대첩」", url: "https://encykorea.aks.ac.kr/Article/E0061676" }
+    explanation: "태조 이성계는 1392년부터 1398년까지 재위한 조선의 제1대 왕이다.",
+    source: { name: "한국민족문화대백과사전 「태조」", url: "https://encykorea.aks.ac.kr/Article/E0059033" }
   },
   {
     id: "hist-08",
@@ -140,11 +140,11 @@ const QUESTIONS = [
   {
     id: "geo-06",
     category: "세계지리",
-    question: "해발고도 기준으로 세계에서 가장 높은 산은? (2020년 중국·네팔 공동 발표 기준)",
-    choices: ["에베레스트산", "K2", "킬리만자로산", "몽블랑"],
+    question: "지구를 북반구와 남반구로 나누는, 위도 0°의 선은?",
+    choices: ["적도", "북회귀선", "남회귀선", "북극권"],
     answer: 0,
-    explanation: "에베레스트산은 세계에서 가장 높은 산으로, 2020년 12월 중국과 네팔이 높이를 8,848.86m로 공동 발표했다.",
-    source: { name: "브리태니커 「Mount Everest」", url: "https://www.britannica.com/place/Mount-Everest" }
+    explanation: "적도는 지구를 북반구와 남반구로 나누는 위도 0°의 선이다.",
+    source: { name: "브리태니커 「Equator」", url: "https://www.britannica.com/place/Equator" }
   },
   {
     id: "geo-07",
@@ -259,11 +259,11 @@ const QUESTIONS = [
   {
     id: "sci-09",
     category: "과학",
-    question: "태양계 행성 가운데 태양에서 가장 가까운 행성은? (평균 거리 기준)",
-    choices: ["수성", "금성", "지구", "화성"],
+    question: "모스 굳기계에서 굳기가 1인 광물은?",
+    choices: ["활석", "석고", "형석", "석영"],
     answer: 0,
-    explanation: "수성은 태양계에서 태양에 가장 가까운 행성으로, 태양과의 평균 거리는 약 5,800만km이다.",
-    source: { name: "NASA 「Mercury: Facts」", url: "https://science.nasa.gov/mercury/facts/" }
+    explanation: "모스 굳기계에서 활석은 굳기가 1로, 손톱으로도 아주 쉽게 긁힌다.",
+    source: { name: "브리태니커 「Mohs hardness」", url: "https://www.britannica.com/science/Mohs-hardness" }
   },
   {
     id: "sci-10",
