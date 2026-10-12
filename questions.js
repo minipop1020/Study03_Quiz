@@ -3,7 +3,7 @@ const QUESTIONS = [
   {
     id: "hist-01",
     category: "한국사",
-    question: "『삼국유사』에 신라 선덕여왕 때 쌓았다는 기록이 있는 경주의 천문 관측 시설은?",
+    question: "『삼국유사』에 신라 선덕여왕 때 쌓았다는 기록이 있고, 천문 관측 시설로 알려진 경주의 석조 건축물은?",
     choices: ["첨성대", "석굴암", "다보탑", "포석정"],
     answer: 0,
     explanation: "경주 첨성대는 신라의 천문 관측 시설로, 『삼국유사』에 선덕여왕 때 쌓았다는 기록이 있다.",
@@ -51,7 +51,7 @@ const QUESTIONS = [
     question: "1443년에 훈민정음을 만든 조선의 왕은?",
     choices: ["태종", "세종", "세조", "성종"],
     answer: 1,
-    explanation: "세종은 1443년 훈민정음을 만들고 1446년 『훈민정음』이라는 책으로 펴냈다.",
+    explanation: "세종은 1443년 훈민정음을 만들었고, 1446년에는 이를 풀이한 책 『훈민정음』(해례본)이 나왔다.",
     source: { name: "한국민족문화대백과사전 「한글」", url: "https://encykorea.aks.ac.kr/Article/E0061508" }
   },
   {
@@ -66,10 +66,10 @@ const QUESTIONS = [
   {
     id: "hist-08",
     category: "한국사",
-    question: "정조 17년(1793)부터 준비해 1796년에 완성한 성곽은?",
+    question: "정조 때 쌓기 시작해 1796년에 완성한 성곽은?",
     choices: ["수원 화성", "남한산성", "북한산성", "행주산성"],
     answer: 0,
-    explanation: "수원 화성은 정조 17년(1793)부터 축조를 준비해 이듬해 공사를 시작하고 1796년에 완성했다.",
+    explanation: "수원 화성은 정조 때 쌓기 시작해 1796년에 완성한 성곽이다.",
     source: { name: "한국민족문화대백과사전 「수원 화성」", url: "https://encykorea.aks.ac.kr/Article/E0064671" }
   },
   {
@@ -84,10 +84,10 @@ const QUESTIONS = [
   {
     id: "hist-10",
     category: "한국사",
-    question: "1919년 4월 11일 대한민국임시정부가 수립된 도시는?",
+    question: "1919년 4월 대한민국임시정부가 수립된 도시는?",
     choices: ["상하이", "충칭", "베이징", "도쿄"],
     answer: 0,
-    explanation: "대한민국임시정부는 1919년 4월 11일 중국 상하이에서 수립되었다.",
+    explanation: "대한민국임시정부는 1919년 4월 중국 상하이에서 수립되었다.",
     source: { name: "한국민족문화대백과사전 「대한민국 임시정부 수립 기념일」", url: "https://encykorea.aks.ac.kr/Article/E0080590" }
   },
 
@@ -98,7 +98,7 @@ const QUESTIONS = [
     question: "오스트레일리아의 수도는?",
     choices: ["캔버라", "시드니", "멜버른", "퍼스"],
     answer: 0,
-    explanation: "캔버라는 오스트레일리아 연방의 수도로, 시드니에서 남서쪽으로 약 240km 떨어져 있다.",
+    explanation: "캔버라는 오스트레일리아 연방의 수도이다.",
     source: { name: "브리태니커 「Canberra」", url: "https://www.britannica.com/place/Canberra" }
   },
   {
@@ -113,10 +113,10 @@ const QUESTIONS = [
   {
     id: "geo-03",
     category: "세계지리",
-    question: "남아메리카 대륙에 약 8,900km에 걸쳐 이어진 산맥은?",
+    question: "남아메리카 대륙에 길게 이어진 산맥은?",
     choices: ["안데스산맥", "로키산맥", "알프스산맥", "우랄산맥"],
     answer: 0,
-    explanation: "안데스산맥은 남아메리카의 산맥으로, 약 8,900km에 걸쳐 끊김 없이 이어진다.",
+    explanation: "안데스산맥은 남아메리카 대륙에 끊김 없이 길게 이어진 산맥이다.",
     source: { name: "브리태니커 「Andes Mountains」", url: "https://www.britannica.com/place/Andes-Mountains" }
   },
   {
@@ -132,7 +132,7 @@ const QUESTIONS = [
     id: "geo-05",
     category: "세계지리",
     question: "브라질 전역에서 쓰이는 언어는?",
-    choices: ["포르투갈어", "스페인어", "프랑스어", "영어"],
+    choices: ["포르투갈어", "스페인어", "프랑스어", "이탈리아어"],
     answer: 0,
     explanation: "브라질에서는 포르투갈어가 나라 전역에서 쓰인다.",
     source: { name: "브리태니커 「Brazil」", url: "https://www.britannica.com/place/Brazil" }
@@ -159,7 +159,7 @@ const QUESTIONS = [
     id: "geo-08",
     category: "세계지리",
     question: "킬리만자로산이 있는 나라는?",
-    choices: ["탄자니아", "에티오피아", "남아프리카공화국", "모로코"],
+    choices: ["탄자니아", "에티오피아", "우간다", "모로코"],
     answer: 0,
     explanation: "킬리만자로산은 탄자니아 북동부에 있는 화산 산괴이다.",
     source: { name: "브리태니커 「Kilimanjaro」", url: "https://www.britannica.com/place/Kilimanjaro" }
@@ -177,7 +177,7 @@ const QUESTIONS = [
     id: "geo-10",
     category: "세계지리",
     question: "흑해와 마르마라해를 잇고, 튀르키예의 아시아 쪽과 유럽 쪽을 나누는 해협은?",
-    choices: ["보스포루스 해협", "지브롤터 해협", "말라카 해협", "도버 해협"],
+    choices: ["보스포루스 해협", "지브롤터 해협", "호르무즈 해협", "모잠비크 해협"],
     answer: 0,
     explanation: "보스포루스 해협은 흑해와 마르마라해를 잇고 튀르키예의 아시아 쪽과 유럽 쪽을 나눈다.",
     source: { name: "브리태니커 「Bosporus」", url: "https://www.britannica.com/place/Bosporus" }
@@ -188,7 +188,7 @@ const QUESTIONS = [
     id: "sci-01",
     category: "과학",
     question: "힘을 받지 않는 물체는 정지해 있거나 같은 속도로 직선 운동을 계속한다는 뉴턴의 제1법칙은?",
-    choices: ["관성의 법칙", "작용·반작용의 법칙", "만유인력의 법칙", "에너지 보존 법칙"],
+    choices: ["관성의 법칙", "가속도의 법칙", "작용 반작용 법칙", "만유인력의 법칙"],
     answer: 0,
     explanation: "뉴턴의 제1법칙인 관성의 법칙은 힘이 작용하지 않으면 물체가 정지 상태나 등속 직선 운동을 유지한다는 법칙이다.",
     source: { name: "브리태니커 「Newton’s laws of motion」", url: "https://www.britannica.com/science/Newtons-laws-of-motion" }
@@ -215,7 +215,7 @@ const QUESTIONS = [
     id: "sci-04",
     category: "과학",
     question: "원소를 원자량 순서로 늘어놓으면 성질이 주기적으로 되풀이된다는 것을 찾아 원소의 주기적 분류를 만든 러시아 화학자는?",
-    choices: ["멘델레예프", "라부아지에", "돌턴", "보일"],
+    choices: ["멘델레예프", "라부아지에", "아보가드로", "베르셀리우스"],
     answer: 0,
     explanation: "멘델레예프는 원소를 원자량이 커지는 순서로 배열하면 성질이 주기적으로 되풀이됨을 찾아 원소의 주기적 분류를 만든 러시아 화학자이다.",
     source: { name: "브리태니커 「Dmitri Mendeleev」", url: "https://www.britannica.com/biography/Dmitri-Mendeleev" }
@@ -233,7 +233,7 @@ const QUESTIONS = [
     id: "sci-06",
     category: "과학",
     question: "식물과 녹조류의 세포에서 광합성이 일어나는 곳은?",
-    choices: ["엽록체", "미토콘드리아", "리보솜", "세포핵"],
+    choices: ["엽록체", "골지체", "리보솜", "세포핵"],
     answer: 0,
     explanation: "엽록체는 식물과 녹조류의 세포 안에서 빛에너지를 화학 에너지로 바꾸는 광합성이 일어나는 구조이다.",
     source: { name: "브리태니커 「chloroplast」", url: "https://www.britannica.com/science/chloroplast" }
@@ -251,7 +251,7 @@ const QUESTIONS = [
     id: "sci-08",
     category: "과학",
     question: "혈액 속에서 폐의 산소를 몸 곳곳의 조직으로 운반하는 세포는?",
-    choices: ["적혈구", "백혈구", "혈소판", "신경 세포"],
+    choices: ["적혈구", "백혈구", "혈소판", "림프구"],
     answer: 0,
     explanation: "적혈구는 철을 포함한 단백질인 헤모글로빈으로 산소를 붙잡아 폐에서 온몸의 조직으로 운반한다.",
     source: { name: "브리태니커 「red blood cell」", url: "https://www.britannica.com/science/red-blood-cell" }
@@ -280,27 +280,27 @@ const QUESTIONS = [
     id: "art-01",
     category: "예술과 문화",
     question: "파리 루브르 박물관에 있는 「모나리자」를 그린 화가는?",
-    choices: ["레오나르도 다빈치", "미켈란젤로", "라파엘로", "렘브란트"],
+    choices: ["다빈치", "미켈란젤로", "라파엘로", "렘브란트"],
     answer: 0,
-    explanation: "「모나리자」는 레오나르도 다빈치가 1503~1519년에 나무판에 유채로 그린 그림으로, 파리 루브르 박물관에 있다.",
+    explanation: "「모나리자」는 레오나르도 다빈치가 나무판에 유채로 그린 그림으로, 파리 루브르 박물관에 있다.",
     source: { name: "브리태니커 「Mona Lisa」", url: "https://www.britannica.com/topic/Mona-Lisa-painting" }
   },
   {
     id: "art-02",
     category: "예술과 문화",
     question: "1889년 프랑스 생레미에서 그린 「별이 빛나는 밤」의 화가는?",
-    choices: ["빈센트 반 고흐", "클로드 모네", "폴 세잔", "파블로 피카소"],
+    choices: ["고흐", "모네", "세잔", "피카소"],
     answer: 0,
-    explanation: "「별이 빛나는 밤」은 빈센트 반 고흐가 1889년 6월 생레미에서 캔버스에 유채로 그린 그림이다.",
+    explanation: "「별이 빛나는 밤」은 빈센트 반 고흐가 1889년 생레미에서 캔버스에 유채로 그린 그림이다.",
     source: { name: "뉴욕 현대미술관(MoMA) 「The Starry Night」", url: "https://www.moma.org/collection/works/79802" }
   },
   {
     id: "art-03",
     category: "예술과 문화",
-    question: "1751년 비 온 뒤의 인왕산 경치를 그린 「인왕제색도」의 화가는?",
+    question: "비 온 뒤의 인왕산 경치를 그린 「인왕제색도」의 화가는?",
     choices: ["정선", "김홍도", "신윤복", "안견"],
     answer: 0,
-    explanation: "「인왕제색도」는 정선이 76세 때인 1751년 비 온 뒤의 인왕산 경치를 보고 그린 그림이다.",
+    explanation: "「인왕제색도」는 정선이 비 온 뒤의 인왕산 경치를 보고 그린 그림이다.",
     source: { name: "한국민족문화대백과사전 「정선 필 인왕제색도」", url: "https://encykorea.aks.ac.kr/Article/E0046984" }
   },
   {
@@ -324,8 +324,8 @@ const QUESTIONS = [
   {
     id: "art-06",
     category: "예술과 문화",
-    question: "한 명의 창자가 고수의 북장단에 맞추어 소리와 아니리로 이야기를 엮고 발림을 곁들이는 전통 공연 예술은?",
-    choices: ["판소리", "탈춤", "종묘제례악", "가야금 산조"],
+    question: "한 명의 창자가 고수의 북장단에 맞추어 노래와 말(아니리)로 긴 이야기를 엮고 몸짓(발림)을 곁들이는 전통 공연 예술은?",
+    choices: ["판소리", "탈춤", "민요", "산조"],
     answer: 0,
     explanation: "판소리는 한 명의 창자가 고수의 북장단에 맞추어 서사적인 이야기를 소리와 아니리로 엮어 발림을 곁들이며 구연하는 전통 공연 예술이다.",
     source: { name: "한국민족문화대백과사전 「판소리」", url: "https://encykorea.aks.ac.kr/Article/E0059663" }
@@ -333,37 +333,37 @@ const QUESTIONS = [
   {
     id: "art-07",
     category: "예술과 문화",
-    question: "1599~1601년 무렵에 쓰인 5막 비극 「햄릿」의 작가는?",
+    question: "5막 비극 「햄릿」을 쓴 작가는?",
     choices: ["셰익스피어", "괴테", "몰리에르", "세르반테스"],
     answer: 0,
-    explanation: "「햄릿」은 윌리엄 셰익스피어가 1599~1601년 무렵에 쓴 5막 비극이다.",
+    explanation: "「햄릿」은 윌리엄 셰익스피어가 쓴 5막 비극이다.",
     source: { name: "브리태니커 「Hamlet」", url: "https://www.britannica.com/topic/Hamlet-by-Shakespeare" }
   },
   {
     id: "art-08",
     category: "예술과 문화",
-    question: "「진달래꽃」·「산유화」·「초혼」 등을 실어 1925년에 간행된 시집 『진달래꽃』의 시인은?",
+    question: "「진달래꽃」·「산유화」·「초혼」 등을 실은 시집 『진달래꽃』의 시인은?",
     choices: ["김소월", "윤동주", "한용운", "이육사"],
     answer: 0,
-    explanation: "『진달래꽃』은 김소월의 시 「진달래꽃」·「산유화」·「초혼」 등을 실어 1925년에 간행한 시집이다.",
+    explanation: "『진달래꽃』은 김소월의 시 「진달래꽃」·「산유화」·「초혼」 등을 실은 시집이다.",
     source: { name: "한국민족문화대백과사전 「진달래꽃」", url: "https://encykorea.aks.ac.kr/Article/E0054622" }
   },
   {
     id: "art-09",
     category: "예술과 문화",
-    question: "무굴 제국 황제 샤자한이 왕비 뭄타즈 마할을 기리려고 17세기에 인도 아그라에 지은 무덤 건축물은?",
-    choices: ["타지마할", "앙코르 와트", "알함브라 궁전", "콜로세움"],
+    question: "무굴 제국 황제 샤자한이 왕비 뭄타즈 마할을 기리려고 인도 아그라에 지은 무덤 건축물은?",
+    choices: ["타지마할", "피라미드", "진시황릉", "앙코르와트"],
     answer: 0,
-    explanation: "타지마할은 무굴 제국 황제 샤자한이 17세기에 왕비 뭄타즈 마할을 기리려고 지은 인도 아그라의 무덤 건축물이다.",
+    explanation: "타지마할은 무굴 제국 황제 샤자한이 왕비 뭄타즈 마할을 기리려고 지은 인도 아그라의 무덤 건축물이다.",
     source: { name: "브리태니커 「Taj Mahal」", url: "https://www.britannica.com/topic/Taj-Mahal" }
   },
   {
     id: "art-10",
     category: "예술과 문화",
     question: "안토니 가우디가 설계한 스페인 바르셀로나의 성당은?",
-    choices: ["사그라다 파밀리아", "노트르담 대성당", "성 베드로 대성당", "쾰른 대성당"],
+    choices: ["사그라다 파밀리아", "노트르담 대성당", "성 베드로 대성당", "캔터베리 대성당"],
     answer: 0,
-    explanation: "사그라다 파밀리아는 안토니 가우디가 설계한 스페인 바르셀로나의 성당으로, 1882년에 공사를 시작했다.",
+    explanation: "사그라다 파밀리아는 안토니 가우디가 설계한 스페인 바르셀로나의 성당이다.",
     source: { name: "브리태니커 「Sagrada Família」", url: "https://www.britannica.com/topic/Sagrada-Familia" }
   },
 ];
