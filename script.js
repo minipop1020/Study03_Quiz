@@ -62,10 +62,15 @@ function renderQuestion() {
   });
   $("feedback").hidden = true;
   $("next-btn").hidden = true;
+  $("timer").hidden = MODES[state.mode].timeLimit === null;
+  $("hint-btn").hidden = !MODES[state.mode].hint;
+  $("hint-btn").disabled = false;
+  startTimer();
 }
 
 function selectChoice(i) {
   if (hasResult()) return;
+  stopTimer();
   const q = currentQuestion();
   const correct = i === q.answer;
   state.results.push({
@@ -81,6 +86,7 @@ function showFeedback(chosen, timedOut) {
   const q = currentQuestion();
   const buttons = choiceButtons();
   buttons.forEach((btn) => (btn.disabled = true));
+  $("hint-btn").disabled = true;
   buttons[q.answer].classList.add("correct");
   buttons[q.answer].textContent = q.choices[q.answer] + " ✔";
   if (chosen !== null && chosen !== q.answer) {
@@ -121,14 +127,82 @@ function totalScore(results) {
 
 function showResult() {
   showScreen("result");
-  $("score-text").textContent = formatScore(totalScore(state.results)) + " / " + state.questions.length;
+  if (state.isRetry) {
+    const right = state.results.filter((r) => r.correct).length;
+    $("retry-text").textContent = `${state.questions.length}문제 중 ${right}문제 맞힘`;
+    $("score-text").textContent = formatScore(state.firstScore) + " / 10";
+  } else {
+    $("score-text").textContent = formatScore(totalScore(state.results)) + " / " + state.questions.length;
+  }
+  $("retry-text").hidden = !state.isRetry;
   const ranked = MODES[state.mode].ranked;
   $("result-notice").textContent = ranked ? "" : "순위표에 기록되지 않음";
   $("result-notice").hidden = ranked;
+  $("retry-btn").hidden = ranked || wrongIds(state.results).length === 0;
+}
+
+// ===== 틀린 문제 다시 풀기 =====
+function wrongIds(results) {
+  return results.filter((r) => !r.correct).map((r) => r.id);
+}
+
+function startRetry() {
+  const ids = wrongIds(state.results);
+  if (!state.isRetry) state.firstScore = totalScore(state.results);
+  state.questions = shuffle(QUESTIONS.filter((q) => ids.includes(q.id)).map(prepareQuestion));
+  state.isRetry = true;
+  state.index = 0;
+  state.results = [];
+  showScreen("quiz");
+  renderQuestion();
 }
 
 // ===== 스피드 =====
-function stopTimer() {}
+function showTimeLeft() {
+  $("timer").textContent = `남은 시간 ${state.timeLeft}초`;
+}
+
+function startTimer() {
+  const limit = MODES[state.mode].timeLimit;
+  if (limit === null) return;
+  stopTimer();
+  state.timeLeft = limit;
+  showTimeLeft();
+  state.timerId = setInterval(() => {
+    state.timeLeft -= 1;
+    showTimeLeft();
+    if (state.timeLeft <= 0) onTimeout();
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(state.timerId);
+  state.timerId = null;
+}
+
+function onTimeout() {
+  stopTimer();
+  if (hasResult()) return;
+  state.results.push({ id: currentQuestion().id, correct: false, usedHint: false, score: 0 });
+  showFeedback(null, true);
+}
+
+// ===== 힌트 =====
+function pickHintRemovals(q) {
+  const wrong = [0, 1, 2, 3].filter((i) => i !== q.answer);
+  return shuffle(wrong).slice(0, 2);
+}
+
+function useHint() {
+  if (state.hintUsed || hasResult()) return;
+  const buttons = choiceButtons();
+  pickHintRemovals(currentQuestion()).forEach((i) => {
+    buttons[i].classList.add("removed");
+    buttons[i].disabled = true;
+  });
+  $("hint-btn").disabled = true;
+  state.hintUsed = true;
+}
 
 // ===== 계산 (화면과 무관) =====
 function shuffle(arr) {
@@ -185,28 +259,39 @@ function validateQuestions(list) {
 }
 
 // ===== 시작 =====
-function renderCategoryOptions() {
-  CATEGORIES.forEach((cat, i) => {
+function renderRadioOptions(containerId, name, items) {
+  items.forEach(({ value, label: text }, i) => {
     const label = document.createElement("label");
     const input = document.createElement("input");
     input.type = "radio";
-    input.name = "category";
-    input.value = cat;
+    input.name = name;
+    input.value = value;
     input.checked = i === 0;
-    label.append(input, " " + cat);
-    $("category-options").append(label);
+    label.append(input, " " + text);
+    $(containerId).append(label);
   });
 }
 
-function selectedCategory() {
-  return document.querySelector('input[name="category"]:checked').value;
+function selectedValue(name) {
+  return document.querySelector(`input[name="${name}"]:checked`).value;
 }
 
-renderCategoryOptions();
+function updatePracticeNotice() {
+  $("practice-notice").hidden = MODES[selectedValue("mode")].ranked;
+}
+
+renderRadioOptions("mode-options", "mode",
+  Object.entries(MODES).map(([value, m]) => ({ value, label: m.label })));
+renderRadioOptions("category-options", "category",
+  CATEGORIES.map((cat) => ({ value: cat, label: cat })));
+$("mode-options").addEventListener("change", updatePracticeNotice);
+updatePracticeNotice();
 choiceButtons().forEach((btn, i) => btn.addEventListener("click", () => selectChoice(i)));
-$("start-btn").addEventListener("click", () => startGame("practice", selectedCategory()));
+$("start-btn").addEventListener("click", () => startGame(selectedValue("mode"), selectedValue("category")));
+$("hint-btn").addEventListener("click", useHint);
 $("next-btn").addEventListener("click", nextQuestion);
 $("quit-btn").addEventListener("click", quitGame);
+$("retry-btn").addEventListener("click", startRetry);
 $("replay-btn").addEventListener("click", () => startGame(state.mode, state.category));
 $("home-btn").addEventListener("click", () => showScreen("start"));
 
