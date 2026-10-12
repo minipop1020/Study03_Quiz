@@ -259,35 +259,49 @@ function validateQuestions(list) {
 }
 
 // ===== 시작 =====
-function renderRadioOptions(containerId, name, items) {
-  items.forEach(({ value, label: text }, i) => {
-    const label = document.createElement("label");
-    const input = document.createElement("input");
-    input.type = "radio";
-    input.name = name;
-    input.value = value;
-    input.checked = i === 0;
-    label.append(input, " " + text);
-    $(containerId).append(label);
+function modeDescription(m) {
+  const parts = [m.timeLimit === null ? "시간 제한 없음" : `문항마다 ${m.timeLimit}초`];
+  if (m.hint) parts.push("힌트 쓰고 맞히면 0.5점");
+  if (!m.ranked) parts.push("순위표에 기록되지 않음");
+  return parts.join(" · ");
+}
+
+function renderCategoryOptions() {
+  CATEGORIES.forEach((cat) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.textContent = cat;
+    btn.addEventListener("click", () => showModeSelect(cat));
+    $("category-options").append(btn);
   });
 }
 
-function selectedValue(name) {
-  return document.querySelector(`input[name="${name}"]:checked`).value;
+function renderModeOptions() {
+  Object.entries(MODES).forEach(([key, m]) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.dataset.mode = key;
+    const title = document.createElement("strong");
+    title.textContent = m.label;
+    const desc = document.createElement("span");
+    desc.className = "option-desc";
+    desc.textContent = modeDescription(m);
+    btn.append(title, desc);
+    btn.addEventListener("click", () => startGame(key, state.category));
+    $("mode-options").append(btn);
+  });
 }
 
-function updatePracticeNotice() {
-  $("practice-notice").hidden = MODES[selectedValue("mode")].ranked;
+function showModeSelect(category) {
+  state.category = category;
+  $("mode-title").textContent = `${category} · 모드를 고르세요`;
+  showScreen("mode");
 }
 
-renderRadioOptions("mode-options", "mode",
-  Object.entries(MODES).map(([value, m]) => ({ value, label: m.label })));
-renderRadioOptions("category-options", "category",
-  CATEGORIES.map((cat) => ({ value: cat, label: cat })));
-$("mode-options").addEventListener("change", updatePracticeNotice);
-updatePracticeNotice();
+renderCategoryOptions();
+renderModeOptions();
 choiceButtons().forEach((btn, i) => btn.addEventListener("click", () => selectChoice(i)));
-$("start-btn").addEventListener("click", () => startGame(selectedValue("mode"), selectedValue("category")));
+$("mode-back-btn").addEventListener("click", () => showScreen("start"));
 $("hint-btn").addEventListener("click", useHint);
 $("next-btn").addEventListener("click", nextQuestion);
 $("quit-btn").addEventListener("click", quitGame);

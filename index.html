@@ -7,19 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <p id="student-info" class="student-info">학번 202402165 이름 김지민</p>
+
   <!-- 시작 화면 -->
   <section id="screen-start">
     <h1>상식 퀴즈</h1>
-    <fieldset>
-      <legend>모드</legend>
-      <div id="mode-options"></div>
-    </fieldset>
-    <fieldset>
-      <legend>카테고리</legend>
-      <div id="category-options"></div>
-    </fieldset>
-    <p id="practice-notice" class="notice">순위표에 기록되지 않음</p>
-    <button id="start-btn" class="primary">시작</button>
+    <p class="notice">카테고리를 고르세요.</p>
+    <div id="category-options" class="option-list"></div>
+  </section>
+
+  <!-- 모드 선택 화면 -->
+  <section id="screen-mode" hidden>
+    <h2 id="mode-title"></h2>
+    <div id="mode-options" class="option-list"></div>
+    <div class="actions">
+      <button id="mode-back-btn">처음으로</button>
+    </div>
   </section>
 
   <!-- 문제 화면 -->
