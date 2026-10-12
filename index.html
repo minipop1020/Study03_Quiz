@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>상식 퀴즈</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 시작 화면 -->
+  <section id="screen-start">
+    <h1>상식 퀴즈</h1>
+    <fieldset>
+      <legend>카테고리</legend>
+      <div id="category-options"></div>
+    </fieldset>
+    <p id="practice-notice" class="notice">연습 모드 · 순위표에 기록되지 않음</p>
+    <button id="start-btn" class="primary">시작</button>
+  </section>
+
+  <!-- 문제 화면 -->
+  <section id="screen-quiz" hidden>
+    <p id="quiz-meta" class="meta"></p>
+    <h2 id="question-text"></h2>
+    <div id="choices">
+      <button class="choice" data-index="0"></button>
+      <button class="choice" data-index="1"></button>
+      <button class="choice" data-index="2"></button>
+      <button class="choice" data-index="3"></button>
+    </div>
+    <div id="feedback" hidden>
+      <p id="feedback-verdict"></p>
+      <p id="feedback-explanation"></p>
+      <a id="feedback-source" target="_blank" rel="noopener"></a>
+    </div>
+    <div class="actions">
+      <button id="next-btn" class="primary" hidden>다음</button>
+      <button id="quit-btn">그만두기</button>
+    </div>
+  </section>
+
+  <!-- 결과 화면 -->
+  <section id="screen-result" hidden>
+    <h2>결과</h2>
+    <p id="score-text" class="score"></p>
+    <p id="result-notice" class="notice" hidden></p>
+    <div class="actions">
+      <button id="replay-btn" class="primary">같은 설정으로 다시</button>
+      <button id="home-btn">처음으로</button>
+    </div>
+  </section>
+
+  <!-- 순위표 화면 (3단계) -->
+  <section id="screen-board" hidden></section>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

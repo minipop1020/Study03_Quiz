@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: #f3f4f6;
+  color: #1f2937;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  line-height: 1.5;
+}
+
+section {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  overflow-wrap: anywhere;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.choice {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 16px;
+  text-align: left;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  color: inherit;
+}
+
+.choice:not(:disabled):hover {
+  border-color: #6b7280;
+}
+
+.choice.correct {
+  background: #dcfce7;
+  border-color: #16a34a;
+  color: #14532d;
+}
+
+.choice.wrong {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #7f1d1d;
+}
+
+.choice.removed {
+  opacity: 0.35;
+  text-decoration: line-through;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+fieldset {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+fieldset label {
+  display: inline-block;
+  margin: 4px 16px 4px 0;
+  cursor: pointer;
+}
+
+.notice {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.meta {
+  margin-top: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.actions button,
+#start-btn {
+  padding: 10px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: inherit;
+}
+
+.actions button.primary,
+#start-btn.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+#feedback {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+#feedback p {
+  margin: 0 0 8px;
+}
+
+.verdict-correct {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.verdict-wrong {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+#feedback-source {
+  color: #1d4ed8;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 8px 0;
+}
